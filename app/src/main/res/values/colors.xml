@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2196f3</color>
+    <color name="colorPrimaryDark">#2196f3</color>
+    <color name="colorAccent">#1651cf</color>
+
+    <!-- kayit ol activity -->
+    <color name="kayitOlTextColor">#000000</color>
+    <color name="buttonTextColor">#1651cf</color>
+    <color name="baslikColor">#2196f3</color>
+
+    <!-- Main Activity Renkler -->
+     <color name="BottomViewSecilenRenk">#2196f3</color>
+     <color name="BottomViewSecilmeyenRenk">#AAAAAA</color>
+
+</resources>
