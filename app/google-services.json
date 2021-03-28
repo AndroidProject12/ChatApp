@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "501751949792",
+    "project_id": "alole-7469f",
+    "storage_bucket": "alole-7469f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501751949792:android:4e6fef8be3a8934d1de385",
+        "android_client_info": {
+          "package_name": "com.company.alole"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501751949792-633ltu36er4ell11ni1558gdbum2a7rj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-T86lFbj8ioWn2Ggxf-isGHamy-BJ8rg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501751949792-633ltu36er4ell11ni1558gdbum2a7rj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
