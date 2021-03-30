@@ -82,7 +82,7 @@ public class KayitOlActivity extends AppCompatActivity {
                                          if(task.isSuccessful()){
                                           mUser = mAuth.getCurrentUser();
                                           if(mUser != null){
-                                              mKullanici = new Kullanici(txtIsim, txtEmail,mUser.getUid());
+                                              mKullanici = new Kullanici(txtIsim, txtEmail,mUser.getUid(),"default");
 
                                               mFirestore.collection("Kullanıcılar").document(mUser.getUid()).set(mKullanici)
                                                        .addOnCompleteListener(KayitOlActivity.this, new OnCompleteListener<Void>() {

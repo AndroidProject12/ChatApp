@@ -1,12 +1,13 @@
 package com.androidproject.alole.Model;
 
 public class Kullanici {
-    private String kullaniciIsmi, kullaniciEmail, kullaniciId;
+    private String kullaniciIsmi, kullaniciEmail, kullaniciId, kullaniciProfil;
 
-    public Kullanici(String kullaniciIsmi, String kullaniciEmail ,String kullaniciId) {
+    public Kullanici(String kullaniciIsmi, String kullaniciEmail ,String kullaniciId, String kullaniciProfil) {
         this.kullaniciIsmi = kullaniciIsmi;
         this.kullaniciEmail = kullaniciEmail;
         this.kullaniciId = kullaniciId;
+        this.kullaniciProfil = kullaniciProfil;
     }
 
     public Kullanici() {
@@ -37,5 +38,11 @@ public class Kullanici {
         this.kullaniciId = kullaniciId;
     }
 
+    public String getKullaniciProfil() {
+        return kullaniciProfil;
+    }
 
+    public void setKullaniciProfil(String kullaniciProfil) {
+        this.kullaniciProfil = kullaniciProfil;
+    }
 }

@@ -49,9 +49,11 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.bottom_nav_ic_message:
                         fragmentiAyarla(mesajlarFragment);
                         return true;
+
                     case R.id.bottom_nav_ic_profile:
                         fragmentiAyarla(profilFragment);
                         return true;
+
                     default:
                         return false;
                 }

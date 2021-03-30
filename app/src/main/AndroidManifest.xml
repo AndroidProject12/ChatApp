@@ -15,8 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.KayitOlActivity"></activity>
-        <activity android:name=".View.MainActivity"></activity>
+        <activity android:name=".View.KayitOlActivity">
+
+        </activity>
+        <activity android:name=".View.MainActivity">
+
+        </activity>
     </application>
 
 </manifest>
