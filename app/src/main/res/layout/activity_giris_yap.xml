@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".View.GirisYapActivity">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:id="@+id/giris_yap_linear"
+      android:gravity="center"
+      android:layout_centerInParent="true"
+      android:orientation="vertical"
+      android:padding="20dp"
+      android:layout_height="wrap_content">
+
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textStyle="bold"
+          android:layout_marginBottom="30dp"
+          android:textColor="@color/KayitOlTextColor"
+          android:textSize="30sp"
+          android:text="Giris Yap">
+
+      </TextView>
+
+
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="match_parent"
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+          android:layout_height="wrap_content"
+          app:boxCornerRadiusTopStart="10dp"
+          app:boxCornerRadiusBottomEnd="10dp"
+          android:id="@+id/giris_yap_inputEmail"
+          android:layout_margin="10dp"
+          app:counterEnabled="true"
+          app:counterMaxLength="35">
+
+          <EditText
+              android:layout_width="match_parent"
+              android:hint="Emailinizi Giriniz"
+              android:id="@+id/giris_yap_EditEmail"
+              android:textSize="27sp"
+              android:inputType="textEmailAddress"
+              android:maxLength="35"
+              android:textColor="@color/KayitOlTextColor"
+              android:textStyle="bold"
+              android:layout_height="wrap_content">
+
+          </EditText>
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="match_parent"
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+          android:layout_height="wrap_content"
+          app:boxCornerRadiusTopStart="10dp"
+          android:id="@+id/giris_yap_inputSifre"
+          app:boxCornerRadiusBottomEnd="10dp"
+          android:layout_margin="10dp"
+          app:counterEnabled="true"
+          app:counterMaxLength="20">
+
+          <EditText
+              android:layout_width="match_parent"
+              android:hint="Şifrenizi Giriniz"
+              android:textSize="27sp"
+              android:maxLength="20"
+              android:id="@+id/giris_yap_EditSifre"
+              android:inputType="textPassword"
+              android:textColor="@color/KayitOlTextColor"
+              android:textStyle="bold"
+              android:layout_height="wrap_content">
+
+          </EditText>
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <Button
+          android:layout_width="250dp"
+          android:layout_margin="35dp"
+          android:text="Giris Yap"
+          android:onClick="btnGirisYap"
+          android:textAllCaps="false"
+          android:background="@drawable/kayit_ol_giris_yap_btn_bg"
+          android:textSize="17sp"
+          android:textColor="@color/KayitOlBtnText"
+          android:textStyle="bold"
+          android:layout_gravity="center"
+          android:layout_height="50dp">
+
+      </Button>
+
+  </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/giris_yap_kayit_ol_bg"
+        android:onClick="btnGitKayitOl"
+        android:layout_alignParentBottom="true">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="17sp"
+            android:layout_centerInParent="true"
+            android:text="Kayıt Ol"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

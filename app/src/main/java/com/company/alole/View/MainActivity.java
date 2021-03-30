@@ -1,8 +1,10 @@
-package com.company.alole;
+package com.company.alole.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.company.alole.R;
 
 public class MainActivity extends AppCompatActivity {
 

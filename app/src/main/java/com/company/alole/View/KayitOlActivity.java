@@ -1,8 +1,9 @@
-package com.company.alole;
+package com.company.alole.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,21 +13,20 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.company.alole.Model.Kullanici;
+import com.company.alole.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.auth.FirebaseAuthCredentialsProvider;
 
 public class KayitOlActivity extends AppCompatActivity {
 
+    private ProgressDialog mProgress;
     private Kullanici mKullanici;
-
     private LinearLayout mLinear;
     private FirebaseFirestore mFiresore;
     private FirebaseAuth mAuth;
@@ -71,6 +71,10 @@ public class KayitOlActivity extends AppCompatActivity {
                 if (!TextUtils.isEmpty(txtSifre)){
                     if (!TextUtils.isEmpty(txtSifreTekrar)){
                         if (txtSifre.equals(txtSifreTekrar)){
+                            mProgress = new ProgressDialog(this);
+                            mProgress.setTitle("Kayıt Olunuyor...");
+
+                            mProgress.show();
                             mAuth.createUserWithEmailAndPassword(txtEmail,txtSifre)
                                     .addOnCompleteListener(KayitOlActivity.this, new OnCompleteListener<AuthResult>() {
                                         @Override
@@ -86,11 +90,13 @@ public class KayitOlActivity extends AppCompatActivity {
                                                                  @Override
                                                                  public void onComplete(@NonNull Task<Void> task) {
                                                                      if (task.isSuccessful()){
+                                                                         progressAyar();
                                                                          Toast.makeText(KayitOlActivity.this,"Başarıyla Kayıt Oldunuz",Toast.LENGTH_SHORT).show();
                                                                          finish();
                                                                          startActivity(new Intent(KayitOlActivity.this,MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                                                                      }
                                                                      else
+                                                                         progressAyar();
                                                                          Snackbar.make(mLinear,task.getException().getMessage(),Snackbar.LENGTH_SHORT).show();
 
                                                                  }
@@ -103,6 +109,7 @@ public class KayitOlActivity extends AppCompatActivity {
                                         }
                                     });
                         }else
+                            progressAyar();
                             Snackbar.make(mLinear,"Sifreler Uyusmuyor",Snackbar.LENGTH_SHORT).show();
                     }else
                         inputSifreTekrar.setError("Lutfen Sifrenizi Tekrar giriniz");
@@ -113,5 +120,10 @@ public class KayitOlActivity extends AppCompatActivity {
         }else
             inputIsim.setError("Lutfen Gecerli bir İsim bilgisi Giriniz.");
 
+    }
+    private void progressAyar(){
+        if (mProgress.isShowing()){
+            mProgress.dismiss();
+        }
     }
 }
