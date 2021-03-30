@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class GirisYapActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    
     private LinearLayout mLinear;
     private TextInputLayout inputEmail,inputSifre;
     private EditText editEmail,editSifre;
