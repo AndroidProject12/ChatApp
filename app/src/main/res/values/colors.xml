@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#2196f3</color>
@@ -18,4 +19,16 @@
     <color name="MesajGonderResimRenk">#1651cf</color>
     <color name="MesajGonderBtnYazi">#1651cf</color>
 
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <!-- Kayit ol activity Renkler -->
+    <color name="KayitOlTextColor">#000000</color>
+    <color name="KayitOlBtnText">#ffffff</color>
+
+>>>>>>> 80622fc2e916f0dad85781eed3fe42e7fdad345b
 </resources>

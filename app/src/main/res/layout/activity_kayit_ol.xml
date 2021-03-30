@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -135,4 +136,144 @@
         android:layout_gravity="center"
         android:layout_height="55dp" />
 
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:id="@+id/kayit_ol_linear"
+    android:orientation="vertical"
+    tools:context=".View.KayitOlActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"
+        android:textColor="@color/KayitOlTextColor"
+        android:textSize="30sp"
+        android:text="Kayıt Ol">
+
+    </TextView>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_height="wrap_content"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        android:layout_margin="10dp"
+        android:id="@+id/kayit_ol_inputIsim"
+        app:counterEnabled="true"
+        app:counterMaxLength="20">
+
+<EditText
+    android:layout_width="match_parent"
+    android:hint="İsminizi Giriniz"
+    android:textSize="17sp"
+    android:id="@+id/kayit_ol_EditIsim"
+    android:inputType="textPersonName"
+    android:maxLength="20"
+    android:textColor="@color/KayitOlTextColor"
+    android:textStyle="bold"
+    android:layout_height="wrap_content">
+
+</EditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_height="wrap_content"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        android:id="@+id/kayit_ol_inputEmail"
+        android:layout_margin="10dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="35">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="Emailinizi Giriniz"
+            android:id="@+id/kayit_ol_EditEmail"
+            android:textSize="17sp"
+            android:inputType="textEmailAddress"
+            android:maxLength="35"
+            android:textColor="@color/KayitOlTextColor"
+            android:textStyle="bold"
+            android:layout_height="wrap_content">
+
+        </EditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_height="wrap_content"
+        app:boxCornerRadiusTopStart="10dp"
+        android:id="@+id/kayit_ol_inputSifre"
+        app:boxCornerRadiusBottomEnd="10dp"
+        android:layout_margin="10dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="20">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="Şifrenizi Giriniz"
+            android:textSize="17sp"
+            android:maxLength="20"
+            android:id="@+id/kayit_ol_EditSifre"
+            android:inputType="textPassword"
+            android:textColor="@color/KayitOlTextColor"
+            android:textStyle="bold"
+            android:layout_height="wrap_content">
+
+        </EditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_height="wrap_content"
+        app:boxCornerRadiusTopStart="10dp"
+        android:layout_margin="10dp"
+        android:id="@+id/kayit_ol_inputSifreTekrar"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="20">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="Şifrenizi Onaylayın"
+            android:textSize="17sp"
+            android:maxLength="20"
+            android:id="@+id/kayit_ol_EditSifreTekrar"
+            android:inputType="textPassword"
+            android:textColor="@color/KayitOlTextColor"
+            android:textStyle="bold"
+            android:layout_height="wrap_content">
+
+        </EditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_margin="35dp"
+        android:text="Kayıt ol"
+        android:onClick="btnKayitOl"
+        android:textAllCaps="false"
+        android:background="@drawable/kayit_ol_giris_yap_btn_bg"
+        android:textSize="17sp"
+        android:textColor="@color/KayitOlBtnText"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_height="50dp">
+
+    </Button>
+>>>>>>> 80622fc2e916f0dad85781eed3fe42e7fdad345b
 </LinearLayout>

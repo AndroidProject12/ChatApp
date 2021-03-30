@@ -1,33 +1,57 @@
 {
   "project_info": {
+<<<<<<< HEAD
     "project_number": "606330853629",
     "project_id": "alole-5cd39",
     "storage_bucket": "alole-5cd39.appspot.com"
+=======
+    "project_number": "501751949792",
+    "project_id": "alole-7469f",
+    "storage_bucket": "alole-7469f.appspot.com"
+>>>>>>> 80622fc2e916f0dad85781eed3fe42e7fdad345b
   },
   "client": [
     {
       "client_info": {
+<<<<<<< HEAD
         "mobilesdk_app_id": "1:606330853629:android:db13f8cb6660a02c028694",
         "android_client_info": {
           "package_name": "com.androidproject.alole"
+=======
+        "mobilesdk_app_id": "1:501751949792:android:4e6fef8be3a8934d1de385",
+        "android_client_info": {
+          "package_name": "com.company.alole"
+>>>>>>> 80622fc2e916f0dad85781eed3fe42e7fdad345b
         }
       },
       "oauth_client": [
         {
+<<<<<<< HEAD
           "client_id": "606330853629-iube8mfiav05bfg2q0kl0gv0mr7joe40.apps.googleusercontent.com",
+=======
+          "client_id": "501751949792-633ltu36er4ell11ni1558gdbum2a7rj.apps.googleusercontent.com",
+>>>>>>> 80622fc2e916f0dad85781eed3fe42e7fdad345b
           "client_type": 3
         }
       ],
       "api_key": [
         {
+<<<<<<< HEAD
           "current_key": "AIzaSyAFbvcVcdSd9dMgL8FI-GwORD3w1r4EeY8"
+=======
+          "current_key": "AIzaSyB-T86lFbj8ioWn2Ggxf-isGHamy-BJ8rg"
+>>>>>>> 80622fc2e916f0dad85781eed3fe42e7fdad345b
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
+<<<<<<< HEAD
               "client_id": "606330853629-iube8mfiav05bfg2q0kl0gv0mr7joe40.apps.googleusercontent.com",
+=======
+              "client_id": "501751949792-633ltu36er4ell11ni1558gdbum2a7rj.apps.googleusercontent.com",
+>>>>>>> 80622fc2e916f0dad85781eed3fe42e7fdad345b
               "client_type": 3
             }
           ]
