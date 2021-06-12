@@ -52,7 +52,6 @@ public class GirisYapActivity extends AppCompatActivity {
             startActivity(new Intent(GirisYapActivity.this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
         }
     }
-
     public void btnGirisYap(View v){
          txtEmail = editEmail.getText().toString();
          txtSifre = editSifre.getText().toString();
@@ -77,12 +76,10 @@ public class GirisYapActivity extends AppCompatActivity {
                                 }
                            }
                        });
-             }else{
-                 inputSifre.setError("Lütfen Geçerli Şifre Giriniz!!!");
+             }else{ inputSifre.setError("Lütfen Geçerli Şifre Giriniz!!!");
              }
          }
-         else{
-             inputEmail.setError("Lütfen Geçerli Email Adresi Giriniz!!!");
+         else{ inputEmail.setError("Lütfen Geçerli Email Adresi Giriniz!!!");
          }
     }
     public void btnGitKayitOl(View v){

@@ -11,7 +11,6 @@ public class Kullanici {
     }
 
     public Kullanici() {
-
     }
 
     public String getKullaniciIsmi() {
