@@ -18,8 +18,10 @@ import android.widget.Toast;
 import com.androidproject.alole.Adapter.KullaniciAdapter;
 import com.androidproject.alole.Model.Kullanici;
 import com.androidproject.alole.R;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -41,6 +43,9 @@ public class KullanicilarFragment extends Fragment {
     private FirebaseFirestore mFireStore;
     private Query mQuery;
 
+    private DocumentReference mRef;
+    private Kullanici kullanici;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -55,34 +60,45 @@ public class KullanicilarFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(v.getContext(),LinearLayoutManager.VERTICAL,false));
 
-        mQuery = mFireStore.collection("Kullanıcılar");
-        mQuery.addSnapshotListener( new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                if(error != null){
-                    Toast.makeText(v.getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if(value != null){
-                    mKullaniciList.clear();
+        mRef = mFireStore.collection("Kullanıcılar").document(mUser.getUid());
+        mRef.get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                      if(documentSnapshot.exists()){
+                          kullanici = documentSnapshot.toObject(Kullanici.class);
 
-                    for(DocumentSnapshot snapshot : value.getDocuments()){
-                        mKullanici = snapshot.toObject(Kullanici.class);
+                          mQuery = mFireStore.collection("Kullanıcılar");
+                          mQuery.addSnapshotListener( new EventListener<QuerySnapshot>() {
+                              @Override
+                              public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                                  if(error != null){
+                                      Toast.makeText(v.getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                                      return;
+                                  }
+                                  if(value != null){
+                                      mKullaniciList.clear();
 
-                        assert mKullanici != null;
+                                      for(DocumentSnapshot snapshot : value.getDocuments()){
+                                          mKullanici = snapshot.toObject(Kullanici.class);
+                                          assert mKullanici != null;
 
-                        if(mKullanici.getKullaniciId().equals(mUser.getUid()))
-                            mKullaniciList.add(mKullanici);
+                                          if(!mKullanici.getKullaniciId().equals(mUser.getUid()))
+                                              mKullaniciList.add(mKullanici);
+                                      }
+                                      mRecyclerView.addItemDecoration(new LinearDecoration(20,mKullaniciList.size()));
+                                      mAdapter = new KullaniciAdapter(mKullaniciList, v.getContext(), kullanici.getKullaniciId(), kullanici.getKullaniciIsmi(), kullanici.getKullaniciProfil());
+                                      mRecyclerView.setAdapter(mAdapter);
+                                  }
+                              }
+                          });
 
+                      }
                     }
-                    mRecyclerView.addItemDecoration(new LinearDecoration(20,mKullaniciList.size()));
-                    mAdapter = new KullaniciAdapter(mKullaniciList, v.getContext());
-                    mRecyclerView.setAdapter(mAdapter);
-                }
-            }
-        });
+                });
 
         return v;
+
     }
 
     class LinearDecoration extends RecyclerView.ItemDecoration{

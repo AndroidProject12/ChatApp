@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:contentPadding="10dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:contentPadding="8dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,21 +13,36 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="66dp"
             android:layout_height="66dp"
-            android:id="@+id/kullanici_item_imgKullaniciProfil"
+            android:id="@+id/mesajlar_item_imgKullaniciProfil"
             app:civ_border_width="3dp"
             app:civ_border_color="@android:color/black"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/kullanici_item_imgKullaniciProfil"
-            android:layout_toLeftOf="@id/kullanici_item_imgSagYon"
-            android:id="@+id/kullanici_item_txtKullaniciIsim"
+            android:layout_toRightOf="@id/mesajlar_item_imgKullaniciProfil"
+            android:layout_toLeftOf="@id/mesajlar_item_imgSagYon"
+            android:id="@+id/mesajlar_item_txtKullaniciIsim"
             android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:textSize="17sp"
             android:textStyle="bold"
+            android:textColor="@android:color/black"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/mesajlar_item_imgKullaniciProfil"
+            android:layout_toLeftOf="@id/mesajlar_item_imgSagYon"
+            android:id="@+id/mesajlar_item_txtSonMesaj"
+            android:layout_below="@+id/mesajlar_item_txtKullaniciIsim"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="2dp"
+            android:textSize="14sp"
+            android:textStyle="italic"
             android:textColor="@android:color/black"
             />
 
@@ -39,7 +53,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:src="@drawable/ic_yon_sag"
-            android:id="@+id/kullanici_item_imgSagYon"/>
+            android:id="@+id/mesajlar_item_imgSagYon"/>
 
     </RelativeLayout>
 
