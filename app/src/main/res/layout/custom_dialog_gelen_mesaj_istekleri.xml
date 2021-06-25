@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3829c2b4fa3643a32abc7eb2e38d477780fc334b
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -42,14 +46,20 @@
         <ImageView
             android:layout_width="5dp"
             android:layout_height="30dp"
+<<<<<<< HEAD
             android:background="#2196f3"/>
+=======
+            android:background="#000000"/>
+>>>>>>> 3829c2b4fa3643a32abc7eb2e38d477780fc334b
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="MESAJ İSTEKLERİ"
             android:textSize="14sp"
+<<<<<<< HEAD
             android:textColor="#2196f3"
+=======
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:textStyle="bold"/>
@@ -62,4 +72,73 @@
         android:scrollbars="none"
         android:layout_below="@id/custom_dialog_gelen_mesaj_istekleri_linear"
         android:id="@+id/custom_dialog_gelen_mesaj_istekleri_recycleView"/>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/custom_dialog_gelen_mesaj_istekleri_toolbar"
+        android:background="@android:color/transparent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ALOLE"
+            android:textColor="#2196f3"
+            android:textSize="25sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/bauhs93"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/custom_dialog_gelen_mesaj_istekleri_imgKapat"
+            android:layout_marginRight="6dp"
+            android:src="@drawable/ic_close"
+            app:tint="#979797"
+            android:layout_gravity="end"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/custom_dialog_gelen_mesaj_istekleri_linear"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/custom_dialog_gelen_mesaj_istekleri_toolbar">
+
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="30dp"
+            android:background="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MESAJ İSTEKLERİ"
+            android:textSize="14sp"
+>>>>>>> 3829c2b4fa3643a32abc7eb2e38d477780fc334b
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:layout_below="@id/custom_dialog_gelen_mesaj_istekleri_linear"
+        android:id="@+id/custom_dialog_gelen_mesaj_istekleri_recycleView"/>
+<<<<<<< HEAD
+=======
+>>>>>>> a9d0e200c79fd8f898f4ea8cc0f8c6328b73cb39
+>>>>>>> 3829c2b4fa3643a32abc7eb2e38d477780fc334b
 </RelativeLayout>

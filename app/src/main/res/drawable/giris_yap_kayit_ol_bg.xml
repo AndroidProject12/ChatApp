@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
     <!--<solid android:color="#FFFFFF"/>-->
     <corners android:radius="55dp"/>
+<<<<<<< HEAD
+=======
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <!--<solid android:color="#FFFFFF"/>-->
+    <corners android:radius="55dp"/>
+>>>>>>> a9d0e200c79fd8f898f4ea8cc0f8c6328b73cb39
+>>>>>>> 3829c2b4fa3643a32abc7eb2e38d477780fc334b
 </shape>
