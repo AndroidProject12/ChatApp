@@ -2,16 +2,25 @@ package com.androidproject.alole.Model;
 
 public class Kullanici {
     private String kullaniciIsmi, kullaniciEmail, kullaniciId, kullaniciProfil;
+    private boolean kullaniciOnline;
 
-    public Kullanici(String kullaniciIsmi, String kullaniciEmail ,String kullaniciId, String kullaniciProfil) {
+    public Kullanici(String kullaniciIsmi, String kullaniciEmail ,String kullaniciId, String kullaniciProfil, Boolean kullaniciOnline) {
         this.kullaniciIsmi = kullaniciIsmi;
         this.kullaniciEmail = kullaniciEmail;
         this.kullaniciId = kullaniciId;
         this.kullaniciProfil = kullaniciProfil;
+        this.kullaniciOnline = kullaniciOnline;
     }
 
     public Kullanici() {
+    }
 
+    public Boolean getKullaniciOnline() {
+        return kullaniciOnline;
+    }
+
+    public void setKullaniciOnline(Boolean kullaniciOnline) {
+        this.kullaniciOnline = kullaniciOnline;
     }
 
     public String getKullaniciIsmi() {
