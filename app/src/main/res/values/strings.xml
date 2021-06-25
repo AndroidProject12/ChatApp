@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 <resources>
     <string name="app_name">Alole</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-=======
-<resources>
-    <string name="app_name">Alole</string>
->>>>>>> 80622fc2e916f0dad85781eed3fe42e7fdad345b
 </resources>

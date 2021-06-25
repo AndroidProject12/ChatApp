@@ -2,65 +2,106 @@ package com.androidproject.alole.Fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+
+import com.androidproject.alole.Adapter.MesajlarAdapter;
+import com.androidproject.alole.Model.MesajIstegi;
 import com.androidproject.alole.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MesajlarFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
+
 public class MesajlarFragment extends Fragment {
+    private View v;
+    private RecyclerView mRecyclerView;
+    private FirebaseFirestore mFireStore;
+    private Query mQuery;
+    private ArrayList<MesajIstegi> mArrayList;
+    private ArrayList<String> mSonMesajList;
+    private MesajIstegi mesajIstegi;
+    private MesajlarAdapter mesajlarAdapter;
+    private FirebaseUser mUser;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public MesajlarFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MesajlarFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MesajlarFragment newInstance(String param1, String param2) {
-        MesajlarFragment fragment = new MesajlarFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private Query sonMsgQuery;
+    private int sonMsgIndex = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mesajlar, container, false);
+        v=inflater.inflate(R.layout.fragment_mesajlar, container, false);
+
+        mFireStore = FirebaseFirestore.getInstance();
+        mUser = FirebaseAuth.getInstance().getCurrentUser();
+        mArrayList = new ArrayList<>();
+        mSonMesajList = new ArrayList<>();
+
+        mRecyclerView = v.findViewById(R.id.mesajlar_fragment_recycleView);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(v.getContext(), LinearLayoutManager.VERTICAL, false));
+
+        mQuery = mFireStore.collection("Kullanıcılar").document(mUser.getUid()).collection("Kanal");
+        mQuery.addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable final QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                if (error != null){
+                    Toast.makeText(v.getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (value != null){
+                    mArrayList.clear();
+                    sonMsgIndex = 0;
+
+                    for (DocumentSnapshot snapshot : value.getDocuments()){
+                        mesajIstegi = snapshot.toObject(MesajIstegi.class);
+
+                        if(mesajIstegi != null){
+                            mArrayList.add(mesajIstegi);
+
+                           sonMsgQuery = mFireStore.collection("ChatKanalları").document(mesajIstegi.getKanalId()).collection("Mesajlar")
+                                   .orderBy("mesajTarihi", Query.Direction.DESCENDING)
+                                   .limit(1);
+                           sonMsgQuery.addSnapshotListener(new EventListener<QuerySnapshot>() {
+                               @Override
+                               public void onEvent(@Nullable QuerySnapshot value2, @Nullable FirebaseFirestoreException error) {
+                                   if(error == null && value2 != null){
+                                       mSonMesajList.clear();
+
+                                       for(DocumentSnapshot snp: value2.getDocuments()) {
+                                           mSonMesajList.add(snp.getData().get("mesajIcerigi").toString());
+                                           sonMsgIndex++;
+
+                                           if (sonMsgIndex == value.getDocuments().size()) {
+                                               mesajlarAdapter = new MesajlarAdapter(mArrayList, v.getContext(), mSonMesajList);
+                                               mRecyclerView.setAdapter(mesajlarAdapter);
+                                               sonMsgIndex = 0;
+                                           }
+                                       }
+                                   }
+                               }
+                           });
+                        }
+                    }
+                }
+            }
+        });
+        return v;
     }
 }

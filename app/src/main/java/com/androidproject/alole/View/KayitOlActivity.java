@@ -82,7 +82,7 @@ public class KayitOlActivity extends AppCompatActivity {
                                          if(task.isSuccessful()){
                                           mUser = mAuth.getCurrentUser();
                                           if(mUser != null){
-                                              mKullanici = new Kullanici(txtIsim, txtEmail,mUser.getUid(),"default");
+                                              mKullanici = new Kullanici(txtIsim, txtEmail,mUser.getUid(),"default", false);
 
                                               mFirestore.collection("Kullanıcılar").document(mUser.getUid()).set(mKullanici)
                                                        .addOnCompleteListener(KayitOlActivity.this, new OnCompleteListener<Void>() {
@@ -116,10 +116,10 @@ public class KayitOlActivity extends AppCompatActivity {
                     inputSifre.setError("Lütfen Geçerli Şifre Belirleyiniz!!!");
                 }
             }else{
-                inputEmail.setError("Lütfen Geçerli E-mail Bilgisi Giriniz!!!");
+                inputEmail.setError("Lütfen Geçerli E-mail Adresi Giriniz!!!");
             }
         }else{
-            inputIsim.setError("Lütfen Geçerli İsim Bilgisi Giriniz!!!");
+            inputIsim.setError("Lütfen Geçerli İsim Giriniz!!!");
         }
     }
     private void progressAyar(){
