@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,7 +17,15 @@
         <ImageView
             android:layout_width="5dp"
             android:layout_height="30dp"
+<<<<<<< HEAD
             android:background="#2196f3"/>
+=======
+<<<<<<< HEAD
+            android:background="#2196f3"/>
+=======
+            android:background="#000000"/>
+>>>>>>> 3829c2b4fa3643a32abc7eb2e38d477780fc334b
+>>>>>>> 9005ef847ef8dfe4cba1840ac80a3a1c5050fa56
 
         <TextView
             android:layout_width="wrap_content"
@@ -24,7 +33,59 @@
             android:text="MESAJLAR"
             android:textSize="15sp"
             android:layout_gravity="center"
+<<<<<<< HEAD
             android:textColor="#2196f3"
+=======
+<<<<<<< HEAD
+            android:textColor="#2196f3"
+=======
+>>>>>>> 3829c2b4fa3643a32abc7eb2e38d477780fc334b
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/mesajlar_fragment_mesajlar_linear"
+        android:id="@+id/mesajlar_fragment_recycleView"/>
+
+
+<<<<<<< HEAD
+
+=======
+
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.MesajlarFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/mesajlar_fragment_mesajlar_linear"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="30dp"
+            android:background="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MESAJLAR"
+            android:textSize="15sp"
+            android:layout_gravity="center"
+>>>>>>> 9005ef847ef8dfe4cba1840ac80a3a1c5050fa56
             android:layout_marginLeft="10dp"
             android:textStyle="bold"/>
 
@@ -40,4 +101,9 @@
 
 
 
+<<<<<<< HEAD
+=======
+>>>>>>> a9d0e200c79fd8f898f4ea8cc0f8c6328b73cb39
+>>>>>>> 3829c2b4fa3643a32abc7eb2e38d477780fc334b
+>>>>>>> 9005ef847ef8dfe4cba1840ac80a3a1c5050fa56
 </RelativeLayout>
